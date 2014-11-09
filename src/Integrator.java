@@ -11,7 +11,15 @@ public class Integrator {
         } catch (Exception ex) {
 
         }
-        ui = new IntegratorUI(executor);
+        if(uiMode()) ui = new IntegratorUI(executor);
+    }
+
+    private boolean uiMode() {
+        try{
+            return !System.getProperty("ui").equalsIgnoreCase("false");
+        }catch (Exception ex){
+            return true;
+        }
     }
 
     public String proceedClearMethod() {
@@ -33,5 +41,10 @@ public class Integrator {
 
     public String getError() {
         return "script executor down";
+    }
+
+    public String getState(){
+        if(executor==null) return "Executor creation failed";
+        return executor.state();
     }
 }

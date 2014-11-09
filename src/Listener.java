@@ -36,6 +36,8 @@ public class Listener {
                     Integer minDelay = Integer.valueOf(params.get("mind"));
                     Integer maxDelay = Integer.valueOf(params.get("maxd"));
                     formatAnswer(exchange, integrator.proceedSetMethod(way, mult, minDelay, maxDelay));
+                } else if (operation.equals("print")) {
+                    formatAnswer(exchange, integrator.getState());
                 } else {
                     formatAnswer(exchange, "undefined or unknown operation");
                 }
