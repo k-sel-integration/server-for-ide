@@ -28,6 +28,12 @@ public class Integrator {
         return l ? "" : "script failed";
     }
 
+    public String proceedRemMethod() {
+        boolean l = executor.rem();
+
+        return l ? "" : "script failed";
+    }
+
     public String proceedSetMethod(String url, boolean mult, Integer minDel, Integer maxDel) {
         if (maxDel == null || minDel == null) {
             return "unsetted delay";

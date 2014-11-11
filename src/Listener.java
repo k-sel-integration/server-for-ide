@@ -38,6 +38,8 @@ public class Listener {
                     formatAnswer(exchange, integrator.proceedSetMethod(way, mult, minDelay, maxDelay));
                 } else if (operation.equals("print")) {
                     formatAnswer(exchange, integrator.getState());
+                }else if (operation.equals("rem")) {
+                    formatAnswer(exchange, integrator.proceedRemMethod());
                 } else {
                     formatAnswer(exchange, "undefined or unknown operation");
                 }
