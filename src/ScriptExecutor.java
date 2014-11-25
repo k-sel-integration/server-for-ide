@@ -45,7 +45,7 @@ public class ScriptExecutor {
     public boolean rem(){
         synchronized (ScriptExecutor.class) {
             try {
-                Process proc = Runtime.getRuntime().exec(folder + "clearstate" + extension);
+                Process proc = Runtime.getRuntime().exec(folder + "remstate" + extension);
                 proc.waitFor();
                 return proc.exitValue() == 0;
             } catch (Exception e) {
